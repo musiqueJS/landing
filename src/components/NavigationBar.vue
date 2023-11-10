@@ -149,7 +149,7 @@
 		}
 
 		li {
-			border-bottom: 1px solid #cccccc1c;
+			border-bottom: 1px solid #cccccc7e;
 			padding-bottom: 10px;
 
 		}
@@ -169,7 +169,7 @@
 			width: 50px;
 			height: 50px;
 			position: absolute;
-			top: 0;
+			top: 20px;
 			right: 0;
 			margin: 1rem;
 			display: flex;
@@ -183,6 +183,10 @@
 
 		.nav-mobile {
 			display: block;
+			background: linear-gradient(-90deg, #7000ff, #dc33db, #f53a4f);
+			width: 100%;
+			border-radius: 15px;
+			padding: 1rem 0 3rem 0;
 		}
 	}
 </style>
