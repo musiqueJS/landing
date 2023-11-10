@@ -1,18 +1,67 @@
 <script lang="ts">
-	import NavButton from './NavigationBar/NavButton.vue';
+	import NavButton from './NavigationBar/NavButton.vue'
 	export default {
-    name: 'NavigationBar',
-    components: { NavButton }
-}
+		name: 'NavigationBar',
+		components: { NavButton },
+		data() {
+			return {
+				burgerIcon: '☰',
+				showMobileNav: false,
+			}
+		},
+		methods: {
+			toggleMobileNav() {
+				this.showMobileNav = !this.showMobileNav
+				if (this.showMobileNav) {
+					this.burgerIcon = 'X'
+				} else {
+					this.burgerIcon = '☰'
+				}
+			},
+		},
+	}
 </script>
 <template>
 	<div>
 		<h2>Mjs</h2>
-		<nav>
+		<nav class="nav-desktop">
 			<ul>
 				<li><a href="#">Documentation</a></li>
-				<li><NavButton text="Explore Musique" color="#B6B9CF" background-color="transparent" border-color="#cccccc30" hoverColor="#7000FF" hoverBackgroundColor="#fff" hoverBorderColor="#A87FFB" /></li>
-				<li><NavButton text="Join Waitlist ->" color="#05010D" background-color="#A87FFB" border-color="#cccccc30" hoverColor="#7000FF" hoverBackgroundColor="#fff" hoverBorderColor="#A87FFB" /></li>
+				<li>
+					<NavButton
+						text="Explore Musique"
+						color="#B6B9CF"
+						background-color="transparent"
+						border-color="#cccccc30"
+						hoverColor="#7000FF"
+						hoverBackgroundColor="#fff"
+						hoverBorderColor="#A87FFB"
+					/>
+				</li>
+				<li>
+					<NavButton
+						text="Join Waitlist ->"
+						color="#05010D"
+						background-color="#A87FFB"
+						border-color="#cccccc30"
+						hoverColor="#7000FF"
+						hoverBackgroundColor="#fff"
+						hoverBorderColor="#A87FFB"
+					/>
+				</li>
+			</ul>
+		</nav>
+		<div
+			class="burger-menu"
+			@click="toggleMobileNav()"
+		>
+			{{ burgerIcon }}
+		</div>
+		<nav class="nav-mobile" v-if="showMobileNav">
+			<ul>
+				<li><a href="#">Documentation</a></li>
+				<li><a href="#">Explore Musique</a></li>
+				<li><a href="#">Join Waitlist</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -30,11 +79,11 @@
 		margin: 0 auto;
 		border-bottom: 1px solid #cccccc1c;
 	}
-	
+
 	h2 {
 		font-size: 1.5rem;
 		text-align: center;
-		background: linear-gradient(-90deg, #7000FF, #DC33DB, #F53A4F);
+		background: linear-gradient(-90deg, #7000ff, #dc33db, #f53a4f);
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -74,6 +123,52 @@
 	}
 
 	a:hover {
-		color: #B6B9CF;
+		color: #b6b9cf;
+	}
+
+	.burger-menu {
+		display: none;
+	}
+
+	.nav-mobile {
+		display: none;
+	}
+
+	@media screen and (max-width: 768px) {
+		div {
+			flex-direction: column;
+			height: 20vh;
+			border: none;
+		}
+		ul {
+			flex-direction: column;
+			gap: 10px;
+		}
+		li:first-child::after {
+			display: none;
+		}
+
+		.burger-menu {
+			display: block;
+			font-size: 3rem;
+			cursor: pointer;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.nav-desktop {
+			display: none;
+		}
+
+		.nav-mobile {
+			display: block;
+		}
 	}
 </style>

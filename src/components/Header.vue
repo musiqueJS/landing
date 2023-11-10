@@ -77,4 +77,42 @@
 	img {
 		height: 2rem;
 	}
+
+	@media screen and (max-width : 1024px) {
+		h2 {
+			font-size: 1.5rem;
+			width: 80%;
+		}
+		p {
+			max-width: 80%;
+			font-size: 1.2rem;
+		}
+		h1 {
+			font-size: 3rem;
+		}
+		span {
+			font-size: 1.5rem;
+		}
+	}
+
+	@media screen and (max-width : 768px) {
+		div {
+			height: 60vh;
+		}
+
+		h2 {
+			font-size: 1.2rem;
+			width: 80%;
+		}
+		p {
+			max-width: 80%;
+			font-size: 1rem;
+		}
+		h1 {
+			font-size: 2.5rem;
+		}
+		span {
+			font-size: 1.2rem;
+		}
+	}
 </style>
