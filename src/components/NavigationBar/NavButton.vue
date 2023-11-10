@@ -30,6 +30,10 @@ export default {
 						type: String,
 						default: '#000000',
 				},
+				link : {
+						type: String,
+						default: '#',
+				}
     },
     data() {
         return {
@@ -54,16 +58,17 @@ export default {
 </script>
 
 <template>
-<button
+<a
+		:href="link"
     :style="{ color: currentColor, backgroundColor: currentBackgroundColor, borderColor: currentBorderColor }"
     @mouseover="mouseOver"
     @mouseout="mouseOut"
 >
     {{ text }}
-</button>
+</a>
 </template>
 <style scoped>
-	button {
+	a {
 		border: 1px solid #cccccc30;
 		border-radius: 15px;
 		padding: 1rem 1.5rem;

@@ -5,7 +5,7 @@
 </script>
 
 <template>
-	<a href="#">
+	<a href="https://github.com/musiqueJS/musiqueJS" target="_blank">
 		<div class="container">
 			<div class="social-wrapper">
 				<div class="social">

@@ -26,4 +26,10 @@ export default {
 	.socials > * {
 		margin: 1rem;
 	}
+	
+	@media (max-width: 768px) {
+		.socials {
+			margin-top: 10rem;
+		}
+	}
 </style>

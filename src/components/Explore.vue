@@ -8,7 +8,7 @@
 </script>
 
 <template>
-	<div class="container">
+	<div id="explore" class="container">
 		<div class="announcement-wrapper">
 			<div class="announcement">
 				<code>
@@ -34,6 +34,7 @@
 				hoverColor="#fff"
 				hoverBackgroundColor="transparent"
 				hoverBorderColor="#cccccc30"
+				link="#waitlist"
 			/>
 		</div>
 		<div class="demo-mockup">Insérer une image sympa</div>

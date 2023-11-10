@@ -13,7 +13,7 @@
 			toggleMobileNav() {
 				this.showMobileNav = !this.showMobileNav
 				if (this.showMobileNav) {
-					this.burgerIcon = 'X'
+					this.burgerIcon = 'x'
 				} else {
 					this.burgerIcon = '☰'
 				}
@@ -36,6 +36,7 @@
 						hoverColor="#7000FF"
 						hoverBackgroundColor="#fff"
 						hoverBorderColor="#A87FFB"
+						link="#explore"
 					/>
 				</li>
 				<li>
@@ -47,6 +48,7 @@
 						hoverColor="#7000ff"
 						hoverBackgroundColor="#fff"
 						hoverBorderColor="#A87FFB"
+						link="#waitlist"
 					/>
 				</li>
 			</ul>
@@ -60,8 +62,8 @@
 		<nav class="nav-mobile" v-if="showMobileNav">
 			<ul>
 				<li><a href="#">Documentation</a></li>
-				<li><a href="#">Explore Musique</a></li>
-				<li><a href="#">Join Waitlist</a></li>
+				<li><a href="#explore">Explore Musique</a></li>
+				<li><a href="#waitlist">Join Waitlist</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -141,9 +143,21 @@
 			border: none;
 		}
 		ul {
+			padding-top: 40px;
 			flex-direction: column;
-			gap: 10px;
+			gap: 30px;
 		}
+
+		li {
+			border-bottom: 1px solid #cccccc1c;
+			padding-bottom: 10px;
+
+		}
+
+		li a {
+			font-size: 1.2rem;
+		}
+
 		li:first-child::after {
 			display: none;
 		}
