@@ -169,12 +169,13 @@
 			width: 50px;
 			height: 50px;
 			position: absolute;
-			top: 20px;
-			right: 0;
+			top: 30px;
+			right:-5px;
 			margin: 1rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			z-index: 2;
 		}
 
 		.nav-desktop {
@@ -187,6 +188,10 @@
 			width: 100%;
 			border-radius: 15px;
 			padding: 1rem 0 3rem 0;
+			position: absolute;
+			top: 40px;
+			right: 0;
+			z-index: 1;
 		}
 	}
 </style>
