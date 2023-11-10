@@ -43,7 +43,7 @@
 					<NavButton
 						text="Join Waitlist ->"
 						color="#fff"
-						background-color="#7000ff"
+						background-color="#dc33db"
 						border-color="#cccccc30"
 						hoverColor="#7000ff"
 						hoverBackgroundColor="#fff"
