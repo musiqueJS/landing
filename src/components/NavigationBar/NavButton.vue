@@ -76,6 +76,7 @@ export default {
 		font-weight: bold;
 		cursor: pointer;
 		transition: all 0.3s ease-in-out;
+		text-decoration: none;
 	}
 
 </style>

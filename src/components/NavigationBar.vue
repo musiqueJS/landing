@@ -11,7 +11,6 @@
 		},
 		methods: {
 			toggleMobileNav() {
-				console.log('aled')
 				this.showMobileNav = !this.showMobileNav
 				if (this.showMobileNav) {
 					this.burgerIcon = 'x'
