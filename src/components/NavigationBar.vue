@@ -41,10 +41,10 @@
 				<li>
 					<NavButton
 						text="Join Waitlist ->"
-						color="#05010D"
-						background-color="#A87FFB"
+						color="#fff"
+						background-color="#7000ff"
 						border-color="#cccccc30"
-						hoverColor="#7000FF"
+						hoverColor="#7000ff"
 						hoverBackgroundColor="#fff"
 						hoverBorderColor="#A87FFB"
 					/>

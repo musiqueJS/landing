@@ -2,12 +2,14 @@
 	import NavigationBar from './components/NavigationBar.vue';
 	import Header from './components/Header.vue';
 	import Explore from './components/Explore.vue';
+	import Socials from './components/Socials.vue';
 	export default {
 		name: 'App',
 		components: {
 			NavigationBar,
 			Header,
-			Explore
+			Explore,
+			Socials
 		},
 	}
 </script>
@@ -17,6 +19,7 @@
 		<NavigationBar />
 		<Header />
 		<Explore />
+		<Socials />
 	</div>
 </template>
 
