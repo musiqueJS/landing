@@ -5,8 +5,8 @@
 </script>
 
 <template>
-	<a href="#">
-		<div class="container">
+	<div class="container">
+		<a href="#">
 			<div class="social-wrapper">
 				<div class="social">
 					<img
@@ -19,8 +19,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</a>
+		</a>
+	</div>
 </template>
 
 <style scoped>

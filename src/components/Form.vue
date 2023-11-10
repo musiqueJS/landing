@@ -23,7 +23,6 @@ export default {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin-bottom: 10rem;
 	}
 
 	.form > * {
@@ -92,6 +91,8 @@ export default {
 	@media screen and (max-width: 1024px) {
 		.form {
 			height: auto;
+			margin: 8rem 0;
+			text-align: center;
 		}
 
 		.form > form > input {

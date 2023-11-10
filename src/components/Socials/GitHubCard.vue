@@ -5,8 +5,11 @@
 </script>
 
 <template>
-	<a href="https://github.com/musiqueJS/musiqueJS" target="_blank">
-		<div class="container">
+	<div class="container">
+		<a
+			href="https://github.com/musiqueJS/musiqueJS"
+			target="_blank"
+		>
 			<div class="social-wrapper">
 				<div class="social">
 					<img
@@ -19,8 +22,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</a>
+		</a>
+	</div>
 </template>
 
 <style scoped>
