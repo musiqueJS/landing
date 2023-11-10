@@ -18,10 +18,6 @@
 	</div>
 </template>
 <style scoped>
-	nav {
-		border-bottom: 1px solid #cccccc1c;
-		padding: 2rem 0;
-	}
 	img {
 		height: 2rem;
 	}
@@ -32,6 +28,7 @@
 		width: 95%;
 		height: 10vh;
 		margin: 0 auto;
+		border-bottom: 1px solid #cccccc1c;
 	}
 	
 	h2 {
