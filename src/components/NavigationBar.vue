@@ -11,6 +11,7 @@
 		},
 		methods: {
 			toggleMobileNav() {
+				console.log('aled')
 				this.showMobileNav = !this.showMobileNav
 				if (this.showMobileNav) {
 					this.burgerIcon = 'x'
@@ -61,9 +62,9 @@
 		</div>
 		<nav class="nav-mobile" v-if="showMobileNav">
 			<ul>
-				<li><a href="#">Documentation</a></li>
-				<li><a href="#explore">Explore Musique</a></li>
-				<li><a href="#waitlist">Join Waitlist</a></li>
+				<li><a href="#" @click="toggleMobileNav()">Documentation</a></li>
+				<li><a href="#explore" @click="toggleMobileNav()">Explore Musique</a></li>
+				<li><a href="#waitlist" @click="toggleMobileNav()">Join Waitlist</a></li>
 			</ul>
 		</nav>
 	</div>
