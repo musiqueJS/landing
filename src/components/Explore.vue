@@ -12,16 +12,16 @@
 		<div class="announcement-wrapper">
 			<div class="announcement">
 				<code>
-					<p>npm install musiquejs</p>
-					<span>// or</span>
-					<p>yarn add musiquejs</p>
+					<p><span>npm install</span> musiquejs</p>
+					<span class="comment-code">// or</span>
+					<p><span>yarn add</span> musiquejs</p>
 				</code>
 			</div>
 		</div>
 	</div>
 	<div class="explore">
 		<div class="demo-text">
-			<h2>Open you creativity</h2>
+			<h2>Open your creativity</h2>
 			<p>
 				With Musique.js, you can create music without any musical knowledge. You
 				can create a simple melody, or a complex song with multiple instruments.
@@ -75,6 +75,10 @@
 	}
 
 	.announcement code span {
+		color: #dc33db;
+	}
+
+	.announcement code .comment-code {
 		color: #ffffff4b;
 		font-size: 1rem;
 	}
