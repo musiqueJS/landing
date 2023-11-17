@@ -1,5 +1,60 @@
 <script lang="ts">
+import base from '../airtable'
+import toastr from 'toastr'
+
 export default {
+	data() {
+		return {
+			emailValue: '',
+			isLoading: false
+		}
+	},
+
+	methods: {
+		validEmail(email: string) {
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  			return emailRegex.test(email)
+		},
+
+		async sendToAirtable(email: string) {
+
+			if(this.validEmail(email)) {
+
+				try {
+					this.isLoading = true
+
+					let dateValue = Date.now()
+
+					let record: any = [
+					{
+							"fields": {
+								"Email": email,
+								"Date": dateValue,
+								"Status": "Not Sent"
+							}
+						}
+					]
+
+					await base('Waitlist').create(record)
+
+					this.emailValue = ""
+
+					toastr.success('Votre email a bien été envoyé')
+
+				} catch(error) {
+					// Catch l'error
+					console.error('Erreur lors de l\'envoi', error)
+					return;
+					
+				} finally {
+					this.isLoading = false
+				}
+			} else {
+				toastr.error('Adresse e-mail non valide');
+			}
+		}
+	},
+
 	name: 'Form',
 }
 </script>
@@ -9,8 +64,8 @@ export default {
 		<h2>Join Waitlist</h2>
 		<p>Get notified when <span>Musique.js</span> is ready for you.</p>
 		<form>
-			<input type="email" placeholder="Email" />
-			<button type="submit">Send</button>
+			<input v-model="emailValue" type="email" placeholder="Email" />
+			<input @click="sendToAirtable(emailValue)" type="button" :value="isLoading ? 'Sending...' : 'Send'" :disabled="isLoading">
 		</form>
 	</div>
 </template>
@@ -40,7 +95,7 @@ export default {
 		margin: 0.5rem;
 	}
 
-	.form > form > input {
+	.form > form > input[type=email] {
 		margin: 0 auto;
 		width: 50%;
 		font-size: 1.5rem;
@@ -54,7 +109,7 @@ export default {
 		-webkit-text-fill-color: transparent;
 	}
 
-	.form > form > button {
+	.form > form > input[type=button] {
 		font-size: 1.5rem;
 		margin: 0 auto;
 		width: 20rem;
@@ -64,9 +119,10 @@ export default {
 		padding: 0.5rem;
 		background: linear-gradient(to right, #7000ff, #dc33db, #f53a4f);
 		color: #fff;
+		cursor: pointer;
 	}
 
-	.form > form > button:hover {
+	.form > form > input[type=button]:hover {
 		background: white;
 		transform: scale(1.1);
 		transition: all 0.3s ease-in-out;
