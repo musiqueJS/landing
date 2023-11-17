@@ -5,16 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "airtable": "^0.12.2",
+    "toastr": "^2.1.4",
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@types/toastr": "^2.1.43",
     "@vitejs/plugin-vue": "^4.2.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "vue-tsc": "^1.8.5"
+    "vite": "^4.4.5"
   }
 }

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import NavButton from './NavigationBar/NavButton.vue'
 
 	export default {
