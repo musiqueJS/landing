@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 import base from '../airtable'
 import toastr from 'toastr'
 
@@ -11,12 +11,12 @@ export default {
 	},
 
 	methods: {
-		validEmail(email: string) {
+		validEmail(email) {
 			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   			return emailRegex.test(email)
 		},
 
-		async sendToAirtable(email: string) {
+		async sendToAirtable(email) {
 
 			if(this.validEmail(email)) {
 
@@ -25,7 +25,7 @@ export default {
 
 					let dateValue = Date.now()
 
-					let record: any = [
+					let record = [
 					{
 							"fields": {
 								"Email": email,
@@ -45,7 +45,7 @@ export default {
 					// Catch l'error
 					console.error('Erreur lors de l\'envoi', error)
 					return;
-					
+
 				} finally {
 					this.isLoading = false
 				}

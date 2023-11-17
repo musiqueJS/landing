@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import NavigationBar from './components/NavigationBar.vue';
 	import Header from './components/Header.vue';
 	import Explore from './components/Explore.vue';

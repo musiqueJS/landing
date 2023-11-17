@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 import GitHubCard from './Socials/GitHubCard.vue'
 import XCard from './Socials/XCard.vue'
 export default {
