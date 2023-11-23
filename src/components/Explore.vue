@@ -37,7 +37,9 @@
 				link="#waitlist"
 			/>
 		</div>
-		<div class="demo-mockup">Insérer une image sympa</div>
+		<div class="demo-mockup">
+			<img src="../assets/electro_album_cover.png" alt="Album cover">
+		</div>
 	</div>
 </template>
 
@@ -104,6 +106,10 @@
 		background: #222;
 		border-radius: 15px;
 		padding: 2rem;
+	}
+
+	.demo-mockup img {
+		width: 100%;
 	}
 
 	.demo-text {
