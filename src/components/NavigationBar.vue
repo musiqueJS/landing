@@ -137,6 +137,7 @@
 	}
 
 	@media screen and (max-width: 768px) {
+
 		div {
 			flex-direction: column;
 			height: 20vh;
@@ -161,7 +162,6 @@
 		li:first-child::after {
 			display: none;
 		}
-
 		.burger-menu {
 			display: block;
 			font-size: 3rem;
@@ -186,12 +186,26 @@
 			display: block;
 			background: linear-gradient(-90deg, #7000ff, #dc33db, #f53a4f);
 			width: 100%;
-			border-radius: 15px;
 			padding: 1rem 0 3rem 0;
 			position: absolute;
-			top: 40px;
+			top: 0;
+			height: 100vh;
 			right: 0;
 			z-index: 1;
+		}
+
+		.nav-mobile ul {
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+			position: absolute;
+			top: 20%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+		}
+		.nav-mobile li {
+			border-bottom: none;
 		}
 	}
 </style>
