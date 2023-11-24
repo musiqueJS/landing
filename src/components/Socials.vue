@@ -1,29 +1,32 @@
 <script>
 import GitHubCard from './Socials/GitHubCard.vue'
+import NpmCard from './Socials/NpmCard.vue';
 import XCard from './Socials/XCard.vue'
 export default {
 	name: 'Socials',
-	components: { GitHubCard, XCard },
+	components: { GitHubCard, XCard, NpmCard },
 }
 </script>
 
 <template>
 	<div class="socials">
-		<XCard borderGradient="linear-gradient(110deg, #34343494, #b9b9b9c5)" />
-		<GitHubCard borderGradient="linear-gradient(110deg, #fafafa, #6cc644)" />
+		<XCard />
+		<NpmCard />
+		<GitHubCard />
 	</div>
 </template>
 
 <style scoped>
 	.socials {
 		width: 100%;
-		height: 50vh;
+		min-height: 50vh;
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
 	}
 
 	.socials > * {
+		width: 500px;
 		margin: 1rem;
 	}
 	
