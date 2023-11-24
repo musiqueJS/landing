@@ -17,8 +17,8 @@
 						alt="X Logo"
 					/>
 					<div class="social-text">
-						<h2>We are open source !</h2>
-						<p>Come and contribute to our project on GitHub !</p>
+						<h2>Look at our package !</h2>
+						<p>Discover our package on NPM.</p>
 					</div>
 				</div>
 			</div>
@@ -47,11 +47,11 @@
 		position: relative;
 		padding: 3px;
 		border-radius: 15px;
-		background: linear-gradient(-110deg, #3333334a, #fafafa62);
+		background: linear-gradient(110deg, #CD090D, #fafafa62);
 	}
 
 	.social-wrapper:hover {
-		background: linear-gradient(-180deg, #3333334a, #fafafa62);
+		background: linear-gradient(0deg, #CD090D, #fafafa62);
 	}
 
 	.social {
