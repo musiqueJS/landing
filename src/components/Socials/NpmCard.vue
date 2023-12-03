@@ -7,14 +7,14 @@
 <template>
 	<div class="container">
 		<a
-			href="https://github.com/musiqueJS/musiqueJS"
+			href="https://www.npmjs.com/package/musiquejs"
 			target="_blank"
 		>
 			<div class="social-wrapper">
 				<div class="social">
 					<img
-						src="../../assets/github-logo.png"
-						alt="X Logo"
+						src="../../assets/npm-logo.png"
+						alt="npm Logo"
 					/>
 					<div class="social-text">
 						<h2>Look at our package !</h2>
