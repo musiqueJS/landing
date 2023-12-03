@@ -14,7 +14,7 @@
 				<div class="social">
 					<img
 						src="../../assets/github-logo.png"
-						alt="X Logo"
+						alt="GitHub Logo"
 					/>
 					<div class="social-text">
 						<h2>We are open source !</h2>
