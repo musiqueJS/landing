@@ -37,9 +37,7 @@
 				link="#waitlist"
 			/>
 		</div>
-		<div class="demo-mockup">
-			<img src="../assets/electro_album_cover.png" alt="Album cover">
-		</div>
+		<img src="../assets/snippet.png" alt="snippet-musiquejs">
 	</div>
 </template>
 
@@ -88,7 +86,7 @@
 	.explore {
 		min-height: 60vh;
 		width: 80vw;
-		margin: 0 auto;
+		margin: 0 auto 10rem auto;
 		background: linear-gradient(to right, #7000ff, #dc33db, #f53a4f);
 		border-radius: 15px;
 		position: relative;
@@ -96,20 +94,14 @@
 		align-items: center;
 	}
 
-	.demo-mockup {
-		width: 40vw;
-		min-height: 40vh;
+	img {
+		height: 60vh;
 		position: absolute;
-		top: 31%;
+		top: 20%;
 		transform: translateY(-20%);
 		right: -100px;
-		background: #222;
 		border-radius: 15px;
 		padding: 2rem;
-	}
-
-	.demo-mockup img {
-		width: 100%;
 	}
 
 	.demo-text {
@@ -134,7 +126,7 @@
 	}
 
 	@media screen and (max-width: 1024px) {
-		.demo-mockup {
+		img {
 			/* display: none; */
 			position: initial;
 			top: auto;
@@ -142,6 +134,7 @@
 			right: auto;
 			width: 90%;
 			margin-bottom: 20px;
+			object-fit: contain;
 		}
 		.demo-text {
 			width: 100%;
