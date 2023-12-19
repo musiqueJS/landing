@@ -26,7 +26,7 @@
 		<h2>Mjs</h2>
 		<nav class="nav-desktop">
 			<ul>
-				<li><a href="#">Documentation</a></li>
+				<li><a href="https://docs.musiquejs.com">Documentation</a></li>
 				<li>
 					<NavButton
 						text="Explore Musique"
