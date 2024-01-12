@@ -78,6 +78,7 @@ export default {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		margin: 10rem 0;
 	}
 
 	.form > * {
@@ -97,7 +98,7 @@ export default {
 
 	.form > form > input[type=email] {
 		margin: 0 auto;
-		width: 50%;
+		width: 90%;
 		font-size: 1.5rem;
 		height: 3rem;
 		border: 1px solid #cccccc30;
@@ -112,7 +113,7 @@ export default {
 	.form > form > input[type=button] {
 		font-size: 1.5rem;
 		margin: 0 auto;
-		width: 20rem;
+		width: 90%;
 		height: 3rem;
 		border: none;
 		border-radius: 0.5rem;

@@ -5,20 +5,54 @@
 </script>
 
 <template>
-	<div>
+	<div class="announcement">
+		<span>🎉</span>
+		<a href="https://github.com/musiqueJS/musiqueJS/releases/tag/v1.0.0" target="_blank">
+			Musique.js v1.0.0 is released!
+		</a>
+		<span>🎉</span>
+	</div>
+	<div class="header">
 		<h2>
 			Imagine a world where you can create music without
-			<span>any musical knowledge</span>.
+			<span class="subtitle">any musical knowledge</span>.
 		</h2>
 		<h1>Musique.js</h1>
 		<p>Musique.js is a Javascript library that allows you to create music based on the Web Audio API.</p>
 
-		<a href="#explore"><img src="../assets/arrow-down.png"></a>
+		<a class="arrow" href="#explore"><img src="../assets/arrow-down.png"></a>
 	</div>
 </template>
 
 <style scoped>
-	div {
+	.announcement {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 10vh;
+		margin-top: 20px;
+		background: linear-gradient(-110deg, #7000ff, #dc33db, #f53a4f);
+	}
+
+	.announcement span {
+		font-size: 1.2rem;
+		margin: 0 1rem;
+	}
+	
+	.announcement a {
+		font-size: 1.2rem;
+		color: #fff;
+		text-decoration: underline;
+		text-underline-offset: 5px;
+	}
+
+	.announcement a:hover {
+		text-underline-offset: 8px;
+		transition: text-underline-offset 0.3s ease-in-out;
+	}
+
+	.header {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -47,7 +81,7 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
-	span {
+	.subtitle {
 		/* #7000FF */
 		/* #DC33DB */
 		/* #F53A4F */
@@ -69,7 +103,7 @@
 		}
 	}
 
-	a {
+	.arrow {
 		position: absolute;
 		bottom: 0;
 		animation: bounce 1s infinite;
