@@ -27,28 +27,29 @@
 		<nav class="nav-desktop">
 			<ul>
 				<li><a href="https://docs.musiquejs.com">Documentation</a></li>
+				<!-- <li><a href="https://docs.musiquejs.com" style="text-decoration: underline; text-underline-offset: 5px;">Try it out !</a></li> -->
 				<li>
 					<NavButton
-						text="Explore Musique"
-						color="#B6B9CF"
+					text="Explore Musique"
+					color="#B6B9CF"
 						background-color="transparent"
 						border-color="#cccccc30"
 						hoverColor="#7000FF"
 						hoverBackgroundColor="#fff"
 						hoverBorderColor="#A87FFB"
 						link="#explore"
-					/>
-				</li>
+						/>
+					</li>
 				<li>
 					<NavButton
-						text="Join Waitlist ->"
+						text="Try it now !"
 						color="#fff"
 						background-color="#dc33db"
 						border-color="#cccccc30"
 						hoverColor="#7000ff"
 						hoverBackgroundColor="#fff"
 						hoverBorderColor="#A87FFB"
-						link="#waitlist"
+						link="https://demo.musiquejs.com"
 					/>
 				</li>
 			</ul>

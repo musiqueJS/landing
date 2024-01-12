@@ -3,7 +3,7 @@
 	import Header from './components/Header.vue';
 	import Explore from './components/Explore.vue';
 	import Socials from './components/Socials.vue';
-	import Form from './components/Form.vue';
+	// import Form from './components/Form.vue';
 	export default {
 		name: 'App',
 		components: {
@@ -11,7 +11,7 @@
 			Header,
 			Explore,
 			Socials,
-			Form,
+			// Form,
 		},
 	}
 </script>
@@ -22,7 +22,7 @@
 		<Header />
 		<Explore />
 		<Socials />
-		<Form />
+		<!-- <Form /> -->
 	</div>
 </template>
 
