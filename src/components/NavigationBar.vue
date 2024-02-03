@@ -62,9 +62,9 @@
 		</div>
 		<nav class="nav-mobile" v-if="showMobileNav">
 			<ul>
-				<li><a href="#" @click="toggleMobileNav()">Documentation</a></li>
+				<li><a href="https://docs.musiquejs.com" @click="toggleMobileNav()">Documentation</a></li>
 				<li><a href="#explore" @click="toggleMobileNav()">Explore Musique</a></li>
-				<li><a href="#waitlist" @click="toggleMobileNav()">Join Waitlist</a></li>
+				<li><a href="https://demo.musiquejs.com" @click="toggleMobileNav()">Try it now !</a></li>
 			</ul>
 		</nav>
 	</div>
