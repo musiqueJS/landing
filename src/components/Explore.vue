@@ -2,7 +2,7 @@
 	import NavButton from './NavigationBar/NavButton.vue'
 	import { Partition, Note } from 'musiquejs'
 	import { library } from '@fortawesome/fontawesome-svg-core'
-	import { faPlay } from '@fortawesome/free-solid-svg-icons'
+	import { faPlay, faCopy, faCheck } from '@fortawesome/free-solid-svg-icons'
 	import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 	import Prism from 'prismjs'
 	import 'prismjs/themes/prism-tomorrow.css'
@@ -10,8 +10,13 @@
 	export default {
 		name: 'Explore',
 		components: { NavButton, FontAwesomeIcon },
+		data() {
+			return {
+				copy: false,
+			}
+		},
 		setup() {
-			library.add(faPlay)
+			library.add(faPlay, faCopy, faCheck)
 		},
 		mounted() {
 			window.Prism = window.Prism || {}
@@ -32,6 +37,18 @@
 				)
 
 				partition.play()
+			},
+			copyCode() {
+				navigator.clipboard.writeText(this.$refs.codeToCopy.textContent)
+        .then(() => {
+					this.copy = true
+					setTimeout(() => {
+						this.copy = false
+					}, 2000)
+        })
+        .catch(err => {
+					console.error('Could not copy text: ', err)
+        });
 			},
 		},
 	}
@@ -76,8 +93,10 @@
 				alt="snippet-musiquejs"
 				draggable="false"
 			/> -->
+			<font-awesome-icon v-if="!copy" class="copy-icon" icon="copy" @click="copyCode" />
+			<font-awesome-icon v-else class="copy-icon" icon="check" @click="copyCode" />
 			<pre>
-					<code class="language-javascript">
+					<code class="language-javascript" ref="codeToCopy">
 const partition = new Partition(
 	[
 		new Note('D', 4, 0.18),
@@ -200,10 +219,23 @@ const partition = new Partition(
 		border-radius: 15px;
 	}
 
+	.copy-icon {
+		position: absolute;
+		left: 505px;
+		top: -165px;
+		z-index: 2;
+		cursor: pointer;
+		font-size: 1.2rem;
+	}
+
+	.copy-icon:hover {
+		color: #7000ff;
+	}
+
 	.snippet-play {
 		position: absolute;
 		left: 250px;
-		top: 130px;
+		top: 125px;
 		background: #fff;
 		color: #7000ff;
 		border: none;
@@ -238,7 +270,6 @@ const partition = new Partition(
 		}
 
 		.snippet {
-			position: initial;
 			left: auto;
 			top: auto;
 			width: 100%;
@@ -260,6 +291,12 @@ const partition = new Partition(
 			align-items: center;
 			flex-direction: column;
 			font-size: 0.8rem;
+		}
+
+		.copy-icon {
+			left: 85%;	
+			top: 5%;
+			margin: 0 auto;
 		}
 
 		.snippet-play {
