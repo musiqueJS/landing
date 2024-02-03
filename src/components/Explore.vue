@@ -1,14 +1,47 @@
 <script>
 	import NavButton from './NavigationBar/NavButton.vue'
+	import { Partition, Note } from 'musiquejs'
+	import { library } from '@fortawesome/fontawesome-svg-core'
+	import { faPlay } from '@fortawesome/free-solid-svg-icons'
+	import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+	import Prism from 'prismjs'
+	import 'prismjs/themes/prism-tomorrow.css'
 
 	export default {
 		name: 'Explore',
-		components: { NavButton },
+		components: { NavButton, FontAwesomeIcon },
+		setup() {
+			library.add(faPlay)
+		},
+		mounted() {
+			window.Prism = window.Prism || {}
+			window.Prism.manual = true
+			Prism.highlightAll()
+		},
+		methods: {
+			playMega() {
+				const partition = new Partition(
+					[
+						new Note('D', 4, 0.18),
+						new Note('D', 4, 0.18),
+						new Note('D', 5, 0.36),
+						new Note('A', 4, 0.54),
+					],
+					'sine',
+					new AudioContext()
+				)
+
+				partition.play()
+			},
+		},
 	}
 </script>
 
 <template>
-	<div id="explore" class="container">
+	<div
+		id="explore"
+		class="container"
+	>
 		<div class="announcement-wrapper">
 			<div class="announcement">
 				<code>
@@ -27,17 +60,45 @@
 				can create a simple melody, or a complex song with multiple instruments.
 			</p>
 			<NavButton
-				text="Join Waitlist ->"
+				text="Try it now !"
 				color="#7000FF"
 				background-color="#fff"
 				border-color="#A87FFB"
 				hoverColor="#fff"
 				hoverBackgroundColor="transparent"
 				hoverBorderColor="#cccccc30"
-				link="#waitlist"
+				link="https://demo.musiquejs.com"
 			/>
 		</div>
-		<img src="../assets/snippet.png" alt="snippet-musiquejs">
+		<div class="snippet">
+			<!-- <img
+				src="../assets/snippet.png"
+				alt="snippet-musiquejs"
+				draggable="false"
+			/> -->
+			<pre>
+					<code class="language-javascript">
+const partition = new Partition(
+	[
+		new Note('D', 4, 0.18),
+		new Note('D', 4, 0.18),
+		new Note('D', 5, 0.36),
+		new Note('A', 4, 0.54),
+	], // notes
+
+	'sine', // instrument
+
+	new AudioContext() // audio context
+)
+			</code>
+			</pre>
+			<button
+				class="snippet-play"
+				@click="playMega"
+			>
+				<font-awesome-icon icon="play" />
+			</button>
+		</div>
 	</div>
 </template>
 
@@ -98,8 +159,8 @@
 		height: 60vh;
 		position: absolute;
 		top: 20%;
-		transform: translateY(-20%);
-		right: -100px;
+		transform: translateY(-50%);
+		left: 150px;
 		border-radius: 15px;
 		padding: 2rem;
 	}
@@ -125,6 +186,45 @@
 		color: white;
 	}
 
+	.snippet {
+		position: relative;
+	}
+
+	.snippet pre {
+		position: absolute;
+		left: 150px;
+		top: -200px;
+		color: #7000ff;
+		border: none;
+		padding: 1rem 2rem;
+		border-radius: 15px;
+	}
+
+	.snippet-play {
+		position: absolute;
+		left: 250px;
+		top: 130px;
+		background: #fff;
+		color: #7000ff;
+		border: none;
+		padding: 1rem 2rem;
+		border-radius: 15px;
+		cursor: pointer;
+		font-size: 1.5rem;
+		width: 200px;
+	}
+	/* hover has to stay for 2 seconds */
+	/* keep hovering effet 2 seconds after leaver the button */
+	.snippet-play:hover {
+		background: #7000ff;
+		color: #fff;
+		transition: background-color 0.5s;
+	}
+
+	.snippet-play:active {
+		transform: scale(0.9);
+	}
+
 	@media screen and (max-width: 1024px) {
 		img {
 			/* display: none; */
@@ -136,6 +236,40 @@
 			margin-bottom: 20px;
 			object-fit: contain;
 		}
+
+		.snippet {
+			position: initial;
+			left: auto;
+			top: auto;
+			width: 100%;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		.snippet pre {
+			position: initial;
+			left: auto;
+			top: auto;
+			width: 90%;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			font-size: 0.8rem;
+		}
+
+		.snippet-play {
+			position: initial;
+			left: auto;
+			top: auto;
+			width: 90%;
+			margin: 20px auto;
+		}
+
 		.demo-text {
 			width: 100%;
 			min-height: 40vh;

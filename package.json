@@ -9,7 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "airtable": "^0.12.2",
+    "musiquejs": "^1.0.0",
+    "prismjs": "^1.29.0",
     "toastr": "^2.1.4",
     "vue": "^3.3.4"
   },
