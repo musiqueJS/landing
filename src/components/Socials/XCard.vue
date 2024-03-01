@@ -6,7 +6,10 @@
 
 <template>
 	<div class="container">
-		<a href="#">
+		<a
+			href="https://twitter.com/musiquejs"
+			target="_blank"
+		>
 			<div class="social-wrapper">
 				<div class="social">
 					<img
