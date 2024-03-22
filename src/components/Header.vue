@@ -7,8 +7,8 @@
 <template>
 	<div class="announcement">
 		<span>🎉</span>
-		<a href="https://github.com/musiqueJS/musiqueJS/releases/tag/v1.0.0" target="_blank">
-			Musique.js v1.0.0 is released!
+		<a href="https://github.com/musiqueJS/musiqueJS/releases/tag/v1.1.0" target="_blank">
+			Musique.js v1.1.0 is released!
 		</a>
 		<span>🎉</span>
 	</div>
